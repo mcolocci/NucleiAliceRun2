@@ -1,0 +1,8 @@
+Task working with ROOT5
+
+plugin: run.C
+
+otherwise (for debugging):
+runAna.C
+If grid = kFALSE (line 9) you run in local using the file listed in listaESD
+Else if grid = kTRUE (line 9) you run in the grid using the collection file wnT.xml

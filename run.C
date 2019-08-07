@@ -1,4 +1,4 @@
-const Char_t *AliPhysicsVersion = "v5-09-24-01-1";
+const Char_t *AliPhysicsVersion = "vAN-20190806-1";
 
 /***************************************************************************/
 /***************************************************************************/
@@ -118,7 +118,7 @@ void ConfigDataset(AliAnalysisAlien *plugin,
   if (dataset.EqualTo("test")) {
     plugin->SetRunPrefix("000");
     plugin->SetGridDataDir("/alice/data/2018/LHC18q");
-    plugin->SetDataPattern("pass1/*/AliESDs.root");
+    plugin->SetDataPattern("/pass1/*/AliESDs.root");
   }
 
   // configure runlist
