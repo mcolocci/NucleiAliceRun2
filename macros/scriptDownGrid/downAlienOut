@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#download all runs output listed in runlist.txt (separated by a comma, e.g. 295585, ...) from alien
+#you need to update the alien directory path before running the script!
+#mcolocci
+
+i=1
+#Nrun=200
+
+while [ $i -le 300 ]
+do 
+    export runT=$(cat runlist.txt | awk -v iR=1 -v jC=$i 'FNR == iR {print $jC}') #if the list of the runs is as 123456, 654321, ...
+    #export run=$(cat runlist.txt | awk -v iR=$i -v jC=1 'FNR == iR {print $jC}') #if the list of the runs is as 123456// 654321// ... (// means to wrap)
+    
+    run=${runT:0:6} #added to remove the comma ','
+    
+    echo $run2
+
+    if [ "$run" == "" ]
+    then
+	#echo "empty"
+	break
+    fi
+    
+    echo "Downloading ------ "$run" ------"
+
+    alien_cp alien:/alice/cern.ch/user/m/mcolocci/Nuclei_test_test/output/000$run/AnalysisResults.root AnalysisResults_$run.root
+
+    let i+=1
+done

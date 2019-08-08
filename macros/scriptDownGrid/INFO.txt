@@ -1,0 +1,9 @@
+Copy the run list in runlist.txt
+
+Run ./downloadAlienOut to download all the runs from alien
+
+To merge all the runs:
+
+ls AnalysisResults_*.root > lista
+
+root DoMerge.C
